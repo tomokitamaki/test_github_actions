@@ -51,13 +51,15 @@ jobs:
         run: tree ../
 
       - name: kick python file
-        run: python3 src/train_actions.py
+        run: python src/train_actions.py
 
       - name: what is python vetsion
-        run: python3 --version
+        run: python --version
 
       - name: install pytest
-        run: python3 -m pip install -U pytest
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -U pytest
       
       - name: execute_pytest
         run: |
