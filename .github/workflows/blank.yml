@@ -57,7 +57,8 @@ jobs:
         run: pip install pytest
       
       - name: execute_pytest
-        run: pytest test_train_actions.py
+        run: |
+          pytest test_train_actions.py
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
