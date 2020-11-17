@@ -30,18 +30,19 @@ jobs:
       - name: where is current dir
         run: pwd&&ls&&whoami
 
-      - name: apt update install
+      - name: apt update
         run: sudo apt update 
       
       - name: install packages
         run: sudo apt install tree
-        
+
       - name: install docker
-        run: sudo apt-get install \
-              apt-transport-https \
-              ca-certificates \
-              curl \
-              gnupg-agent \
+        run: |
+              sudo apt-get install 
+              apt-transport-https 
+              ca-certificates 
+              curl 
+              gnupg-agent 
               software-properties-common
 
       - name: list dir
