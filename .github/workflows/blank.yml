@@ -58,8 +58,8 @@ jobs:
 
       - name: install pytest
         run: |
-          python3 -m pip3 install --upgrade pip
-          python3 -m pip3 install -U pytest
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -U pytest
       
       - name: execute_pytest
         run: |
