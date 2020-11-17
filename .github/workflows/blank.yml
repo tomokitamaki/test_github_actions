@@ -33,6 +33,9 @@ jobs:
       - name: is there file?
         run: ls
 
+      - name: install
+        run: sudo apt install tree
+
       - name: struct dir
         run: tree ../
 
