@@ -28,16 +28,13 @@ jobs:
 
       # add custum line
       - name: current dir
-        run: pwd
-
-      - name: is there file?
-        run: ls
+        run: pwd&&ls&&whoami
 
       - name: install
         run: sudo apt install tree
 
       - name: struct dir
-        run: tree ../
+        run: tree ../../
 
       - name: kick python file
         run: python3 test_actions.py
