@@ -36,15 +36,15 @@ jobs:
       - name: install packages
         run: sudo apt install tree
 
-      - name: install docker
-        run: |
-          sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-          sudo apt-get update
-          sudo apt-get install docker-ce docker-ce-cli containerd.io
-          sudo usermod -aG docker runner
-          sudo docker run hello-world
+      # - name: install docker
+      #   run: |
+      #     sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+      #     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+      #     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+      #     sudo apt-get update
+      #     sudo apt-get install docker-ce docker-ce-cli containerd.io
+      #     sudo usermod -aG docker runner
+      #     sudo docker run hello-world
 
 
       - name: list dir
@@ -53,8 +53,11 @@ jobs:
       - name: kick python file
         run: python3 src/train_actions.py
 
+      - name: what is python vetsion
+        run: python3 --version
+
       - name: install pytest
-        run: python -m pip install pytest
+        run: python3 -m pip install -U pytest
       
       - name: execute_pytest
         run: |
