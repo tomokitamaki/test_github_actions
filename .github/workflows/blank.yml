@@ -38,12 +38,12 @@ jobs:
 
       - name: install docker
         run: |
-              sudo apt-get install 
-              apt-transport-https 
-              ca-certificates 
-              curl 
-              gnupg-agent 
-              software-properties-common
+          sudo install 
+          apt-transport-https 
+          ca-certificates 
+          curl 
+          gnupg-agent 
+          software-properties-common
 
       - name: list dir
         run: tree ../../
