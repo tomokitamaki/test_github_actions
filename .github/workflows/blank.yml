@@ -38,7 +38,7 @@ jobs:
 
       - name: install docker
         run: |
-          sudo install 
+          sudo apt install 
           apt-transport-https 
           ca-certificates 
           curl 
