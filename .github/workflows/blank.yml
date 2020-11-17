@@ -54,7 +54,7 @@ jobs:
         run: python3 src/train_actions.py
 
       - name: install pytest
-        run: pip install pytest
+        run: python -m pip install pytest
       
       - name: execute_pytest
         run: |
