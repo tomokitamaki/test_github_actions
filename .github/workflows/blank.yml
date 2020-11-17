@@ -31,7 +31,7 @@ jobs:
         run: pwd&&ls&&whoami
 
       - name: install
-        run: sudo apt install tree
+        run: sudo apt update && sudo apt upgrade && sudo apt install tree
 
       - name: struct dir
         run: tree ../../
