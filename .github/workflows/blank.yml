@@ -28,7 +28,7 @@ jobs:
 
       # add custum line
       - name: where is current dir
-        run: pwd&&ls&&whoami
+        run: pwd&&echo&&ls&&echo&&whoami
 
       - name: apt update
         run: sudo apt update 
@@ -48,10 +48,16 @@ jobs:
 
 
       - name: list dir
-        run: tree ../../
+        run: tree ../
 
       - name: kick python file
-        run: python3 test_actions.py
+        run: python3 src/train_actions.py
+
+      - name: install pytest
+        run: pip3 install pytest
+      
+      - name: execute_pytest
+        run: pytest test_train_actions.py
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
