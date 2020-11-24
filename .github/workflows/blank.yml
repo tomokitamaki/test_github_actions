@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  job1:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     strategy:
@@ -95,7 +95,7 @@ jobs:
           name: my-artifact
           path: my_file.txt
           retention-days: 1
-  build2:
+  job2:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     strategy:
@@ -118,3 +118,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+
+      - name: execute_pytest
+        run: |
+          pytest test_train_actions.py
