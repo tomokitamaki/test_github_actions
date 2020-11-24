@@ -83,6 +83,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      # make file
+      - name: make file for artifact
+        run: touch my_file.txt
+
       - name: save artifact
         uses: actions/upload-artifact@v2
         with:
