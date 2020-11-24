@@ -87,7 +87,7 @@ jobs:
       - name: make file for artifact
         run: |
           touch my_file.txt
-          tree ../../../ >> my_files.txt
+          echo "fadsfa" >> my_files.txt
 
       - name: save artifact
         uses: actions/upload-artifact@v2
@@ -95,3 +95,8 @@ jobs:
           name: my-artifact
           path: my_file.txt
           retention-days: 1
+    step2:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
