@@ -85,7 +85,9 @@ jobs:
 
       # make file
       - name: make file for artifact
-        run: touch my_file.txt
+        run: |
+          touch my_file.txt
+          tree ../../../ >> my_files.txt
 
       - name: save artifact
         uses: actions/upload-artifact@v2
