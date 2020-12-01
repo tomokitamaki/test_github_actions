@@ -90,7 +90,7 @@ jobs:
       # run Docker nginx image
       - name: run Docker nginx image
         run: |
-          docker run -p 80:80 --name web001 nginx:latest
+          docker run -d -p 80:80 --name web001 nginx:latest
           curl http://localhost/
           docker stop web001
 
