@@ -91,9 +91,10 @@ jobs:
       - name: run Docker nginx image
         run: |
           sleep 30
-          docker run -d -p 80:80 --name web001 nginx:latest
+          docker image ls
+          # docker run -d -p 80:80 --name web001 nginx:latest
           # curl http://localhost/
-          docker stop web001
+          # docker stop web001
 
       # make file
       - name: make file for artifact
