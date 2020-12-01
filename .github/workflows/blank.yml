@@ -114,8 +114,8 @@ jobs:
       matrix:
         python-version: [3.8]
     steps:
-        - name: apt update
-        run: sudo apt update 
+      - name: apt update
+      run: sudo apt update 
       
       - name: install packages
         run: sudo apt install tree
