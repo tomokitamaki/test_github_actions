@@ -82,6 +82,18 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      # pull Docker image
+      - name: Pull nginx images
+        run: docker pull nginx:latest
+      
+      # run Docker nginx image
+      - name: run Docker nginx image
+        run: docker run -p 80:80 nginx:latest
+
+      # get pages
+      - name: get web page
+        run: curl http://localhost/
 
       # make file
       - name: make file for artifact
@@ -95,30 +107,3 @@ jobs:
           name: my-artifact
           path: my_file.txt
           retention-days: 1
-  job2:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8]
-
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: execute_pytest
-        run: |
-          pytest test_train_actions.py
